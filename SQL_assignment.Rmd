@@ -1,0 +1,10 @@
+---
+title: "SQL assignment"
+author: "Munan Hou"
+date: "November 15, 2016"
+output: html_document
+---
+
+```{r}
+library(RPostgreSQL)
+```
