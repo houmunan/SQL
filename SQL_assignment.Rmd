@@ -26,3 +26,51 @@ drv <- dbDriver("PostgreSQL")
 con <- dbConnect(drv, user = username, password = password, dbname = dbname, port = port, host = host)
 ```
 
+```{r}
+r3 <- dbGetQuery(con, statement = paste(
+  "select case_cost",
+  "from products"
+  ))
+head(r3)
+```
+
+```{r}
+hist(x = as.vector(r3$case_cost), breaks = 100)
+```
+
+```{r statistical summary}
+case_cost <- as.vector(as.numeric(r3$case_cost))
+case_cost <- subset(case_cost, case_cost!=)
+max(case_cost)
+head(case_cost)
+```
+
+?subset
+
+str(case_cost)
+
+?hist
+
+str(as.vector(r3$case_cost))
+?summary
+
+summary(as.vector(r3$case_cost))
+
+r4 <-
+
+```{r}
+plot(as.vector(r3$case_cost), type = 'l', col='red')
+points(as.vector(r3$case_cost), col='blue')
+```
+
+
+
+
+
+
+
+
+
+
+
+
