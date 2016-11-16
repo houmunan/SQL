@@ -6,5 +6,23 @@ output: html_document
 ---
 
 ```{r}
+library(DBI)
 library(RPostgreSQL)
 ```
+
+```{r connect to the database}
+host <- "analyticsga-east2.c20gkj5cvu3l.us-east-1.rds.amazonaws.com"
+port <- "5432"
+username <- "analytics_student"
+password <- "analyticsga"
+
+## Use the name of the specific database you will access
+dbname <- "iowa_liquor_sales_database"
+
+## Specify the PostreSQL driver
+drv <- dbDriver("PostgreSQL")
+
+## Now establish the connection
+con <- dbConnect(drv, user = username, password = password, dbname = dbname, port = port, host = host)
+```
+
